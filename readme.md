@@ -4,7 +4,7 @@ To run and use dist packages, the front-end application and the back-end one sho
 
 ---
 
-Deploy angular dist package on a server (like apache) and set the value of the current server folder in the property href of the base tag, examples:
+Deploy angular dist package on a server (like apache) and set the value of the current server folder in the property href of the base tag in the index.html, examples:
 1. if you deploy in the root of your htdocs or www, just let the value "/" for the property href
 2. if you deploy in the folder htdocs/folder1/subfolder2 put the value "/folder1/subfolder2/" in the property href without forgeting the final slash
 
