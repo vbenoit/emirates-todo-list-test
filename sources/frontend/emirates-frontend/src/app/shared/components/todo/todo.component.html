@@ -1,0 +1,9 @@
+<div *ngIf="displayToDo()" class="demo-card-image mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+  	{{ toDo.content }}  <span class="remove" (click)="remove(toDo.id)" >X</span>
+  </div>
+  <div class="mdl-card__actions">
+    <button class="mdl-button mdl-js-button mdl-button--raised" *ngIf="toDo.status.toLowerCase() === 'pending'" (click)="completed(toDo.id)">Completed?</button>
+	<span *ngIf="toDo.status.toLowerCase() === 'completed'" >Completed!!!</span>
+  </div>
+</div>

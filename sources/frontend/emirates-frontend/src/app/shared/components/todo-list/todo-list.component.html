@@ -1,0 +1,7 @@
+<em-todo *ngFor="let toDo of toDolist" 
+    [toDo]="toDo"
+    [showPending]="showPending"
+    [showCompleted]="showCompleted" 
+    (rmToDo)="rmToDo.emit($event)"
+    (completeToDo)="completeToDo.emit($event)" >
+</em-todo>

@@ -1,0 +1,9 @@
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+}

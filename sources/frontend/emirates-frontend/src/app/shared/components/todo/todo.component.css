@@ -1,0 +1,17 @@
+div.mdl-card__title {
+	background-color: #fcfbb5 !important;
+}
+
+div.mdl-card__actions {
+	background-color: #f8f7b6 !important;
+}
+
+.remove {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+.remove:hover {
+	cursor: pointer;
+}
