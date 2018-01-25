@@ -20,6 +20,7 @@ export class MainContainerComponent implements OnInit {
 
 	toDoToAddContent = "";
 	sendingToDo = false;
+	disableAddBtn = false;
 
 	showPending = true;
 	showCompleted = true;
@@ -61,6 +62,12 @@ export class MainContainerComponent implements OnInit {
 			this.displaySnackBar( this.MAX_MESSAGE_SIZE_ERROR );
 			return;
 		}
+
+		this.disableAddBtn = true;
+		//to avoid btn to get stuck if there is a network communication issue
+		setTimeout( () => { 
+				this.disableAddBtn = false; 
+			}, 2500 ); 
 
 		this.sendingToDo = true;
 		this.toDoService.addToDo( this.toDoToAddContent );
