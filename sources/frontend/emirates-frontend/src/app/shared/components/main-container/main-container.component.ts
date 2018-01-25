@@ -40,7 +40,7 @@ export class MainContainerComponent implements OnInit {
 				pToDoList => {
 					this.toDoList = pToDoList;
 					//enable button to add toDo if disabled
-					this.sendingToDo = false;
+					this.disableAddBtn = false;
 				}
 			);
 	}
