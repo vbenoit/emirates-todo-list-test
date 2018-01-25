@@ -79,7 +79,7 @@ export class ToDoService extends BaseHttpService {
     }
 
     removeToDo( id: string ) {
-        this.http.delete<Array<ToDo>>(this.endpoint(appConstants.urlAPITodos + id))
+        this.http.delete<Array<ToDo>>(this.endpoint(appConstants.urlAPITodos + "/" + id))
             .subscribe( toDoList => {
                 if ( toDoList != null ){
                     this.toDoListCurrentValue = toDoList;

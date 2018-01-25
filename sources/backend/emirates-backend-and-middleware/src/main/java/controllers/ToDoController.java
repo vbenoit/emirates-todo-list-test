@@ -65,10 +65,12 @@ public class ToDoController {
     	
     	if (toDoService.isValid(toDoDTO)) {
             toDoService.add(toDoDTO);
+            this.logger.info("Add todo");
             return getToDoList();
         }
     	
-        return new ArrayList<ToDo>();
+    	this.logger.error("add todo error");
+        return null;
     }
     
     /**
@@ -84,8 +86,11 @@ public class ToDoController {
     	
     	if (toDoService.isValid(toDo)) {
             toDoService.delete(toDo);
+            this.logger.info("Delete todo");
             return getToDoList();
         }
+    	
+    	this.logger.error("delete todo error");
         return null;
     }
     
@@ -95,7 +100,7 @@ public class ToDoController {
      * @return the toDoList
      */
     @CrossOrigin
-    @RequestMapping(value = "/todos/", method = RequestMethod.PUT)
+    @RequestMapping(value = "/todos", method = RequestMethod.PUT)
     public @ResponseBody List<ToDo> completedTodo(@RequestBody Map<String, Object> toDoInfo) {
         
     	Long id = Long.valueOf( toDoInfo.get("id").toString() );
@@ -105,8 +110,11 @@ public class ToDoController {
     	
     	if (toDoService.isValid(toDo)) {
             toDoService.update(toDo);
+            this.logger.info("Completed todo");
             return getToDoList();
         }
+    	
+    	this.logger.error("Complete todo error");
         return null;
     }
     
@@ -119,6 +127,7 @@ public class ToDoController {
     	exampleToDo.setContent("Example todo");
     	exampleToDo.setStatus("Pending");
         toDoService.add( exampleToDo );
+        this.logger.info("Add example todo");
     }
     
 }
